@@ -43,6 +43,7 @@ resetButton.addEventListener("click", () => {
 function updateTime(){
 	elapsedTime = Date.now() - startTime;
 
+	// Converting from milliseconds
 	secs = Math.floor((elapsedTime / 1000) % 60);
 	mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
 	hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 60);
@@ -53,6 +54,7 @@ function updateTime(){
 
 	timeDisplay.textContent = `${hrs}:${mins}:${secs}`;
 
+	// Display two zeroes as 00:00:00 format. 
 	function padding(unit){
 		return (("0") + unit).length > 2 ? unit : "0" + unit;
 	}
